@@ -1,0 +1,1 @@
+Creating an etch-a-sketch web application as part of The Odin Project.
