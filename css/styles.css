@@ -11,10 +11,11 @@ body {
     margin: 0%;
     padding: 0%;
     font-size: 100%;
+    color: var(--text-color);
 }
 
 .header {
-    height: 20vh;
+    height: 10vh;
     width: 100%;
     display: flex;
     place-items: center;
@@ -23,9 +24,45 @@ body {
 
 #title {
     font-family: 'Lobster', cursive;
-    font-size: 400%;
+    font-size: 350%;
     color: var(--title-color);
     font-weight: normal;
     margin: 0%;
     padding: 0%;
+}
+
+div {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin: .5em;
+}
+
+h1 {
+    padding-bottom: 2em;
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#grid-size {
+
+}
+
+button {
+    margin: .7em;
+    border: .5em solid var(--border-color);
+    color: var(--background-color);
+    font-weight: bold;
+    padding: .7em;
+    border-radius: 2.2em;
+    width: 11em;
+}
+
+button:hover {
+    background-color: var(--other-color);
+    border: .5em solid var(--text-color);
+    cursor: pointer;
 }
