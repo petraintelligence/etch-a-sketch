@@ -63,11 +63,14 @@ function boardSize() {
 }
 
 function blackBrush() {
-    return "black"
+    colorPicker = 0;
+    return "black";
 }
 
 function randomBrush() {
-
+    colorPicker = 1;
+    const randomBrush = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomBrush;
 }
 
 function changeGradient() {
