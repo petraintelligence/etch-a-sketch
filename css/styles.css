@@ -15,7 +15,7 @@ body {
 }
 
 .header {
-    height: 10vh;
+    height: 9vh;
     width: 100%;
     display: flex;
     place-items: center;
@@ -35,7 +35,9 @@ div {
     display: flex;
     place-items: center;
     justify-content: center;
-    margin: .5em;
+    margin: .3em;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 h1 {
@@ -47,8 +49,20 @@ h2 {
     padding: 0px;
 }
 
-#grid-size {
+#game-board {
+    justify-content: center;
+    display: grid;
+    width: 35vw;
+    min-width: 400px;
+    min-height: 400px;
+    height: 70vh;
+    background-color: var(--title-color);
+    margin: 20px auto 0 auto;
+    border: 8px ridge var(--text-color);
+}
 
+#grid-size {
+    margin-top: .3em;
 }
 
 button {
@@ -56,9 +70,9 @@ button {
     border: .5em solid var(--border-color);
     color: var(--background-color);
     font-weight: bold;
-    padding: .7em;
+    padding: .5em;
     border-radius: 2.2em;
-    width: 11em;
+    width: 10em;
 }
 
 button:hover {
