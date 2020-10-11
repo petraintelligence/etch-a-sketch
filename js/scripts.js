@@ -87,6 +87,7 @@ function eraser() {
     colorPicker = 3;
     return "#fefefe";
 }
+
 // Main Function
 displayBoardSize();
 makeBoard();
