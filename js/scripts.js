@@ -39,12 +39,27 @@ function eraseBoard() {
         board = document.getElementById('game-div');
         board.removeChild(board.lastElementChild);
     };
-    board.style.animation = "shake 0.5s";
-    board.style.animationIterationCount = "1";
 }
 
 function boardSize() {
-
+    eraseBoard();
+    numberOfRows = prompt("How many rows would you like? (1 - 150 rows)");
+    let acceptableAnswer = false;
+    while (!acceptableAnswer) {
+        if (!numberOfRows) {
+            numberOfRows = 16;
+        } else if (parseInt(numberOfRows) > 150) {
+            numberOfRows = prompt("Maximum is 150 rows");
+        } else if (parseInt(numberOfRows) < 1) {
+            numberOfRows = prompt("Minimum is 1 row");
+        } else if (isNaN(numberOfRows)) {
+            numberOfRows = prompt("Please enter a number between 1 and 150");
+        } else {
+            acceptableAnswer = true;
+        }
+        displayBoardSize();
+    }
+    makeBoard();
 }
 
 function blackBrush() {
@@ -59,12 +74,14 @@ function changeGradient() {
 
 }
 
-// Main Function
-makeBoard();
+function displayBoardSize() {
+    const boardSizeText = document.querySelector('#grid-size');
+    boardSizeText.innerHTML = `Grid Size: ${numberOfRows} x ${numberOfRows}`;
+}
 
-// Set Board Size Text
-const boardSizeText = document.querySelector('#grid-size');
-boardSizeText.innerHTML = `Grid Size: ${numberOfRows} x ${numberOfRows}`;
+// Main Function
+displayBoardSize();
+makeBoard();
 
 // Event Listeners for Buttons
 reset.addEventListener("click", function() { eraseBoard(), makeBoard()});
