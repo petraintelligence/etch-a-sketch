@@ -29,7 +29,7 @@ function makeBoard() {
             box.style.opacity -= ".1";
         } else if (colorPicker = 3) {
             box.style.opacity = "1.0";
-            box.style.backgroundColor = eraseBoard();
+            box.style.backgroundColor = eraser();
         }
     }))
 };
@@ -74,7 +74,8 @@ function randomBrush() {
 }
 
 function changeGradient() {
-
+    colorPicker = 2;
+    return;
 }
 
 function displayBoardSize() {
@@ -82,6 +83,10 @@ function displayBoardSize() {
     boardSizeText.innerHTML = `Grid Size: ${numberOfRows} x ${numberOfRows}`;
 }
 
+function eraser() {
+    colorPicker = 3;
+    return "#fefefe";
+}
 // Main Function
 displayBoardSize();
 makeBoard();
@@ -92,4 +97,4 @@ changeSize.addEventListener("click", boardSize);
 blackColor.addEventListener("click", blackBrush);
 randomColor.addEventListener("click", randomBrush);
 gradient.addEventListener("click", changeGradient);
-cleared.addEventListener("click", eraseBoard);
+cleared.addEventListener("click", eraser);
